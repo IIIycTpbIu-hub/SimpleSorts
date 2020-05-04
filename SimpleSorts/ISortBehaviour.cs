@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SimpleSorts
 {
-    interface ISortBehaviour<T> where T : IComparable
+    public interface ISortBehaviour<T> where T : IComparable
     {
         public T[] Sort(T[] arrayToSort);
     }

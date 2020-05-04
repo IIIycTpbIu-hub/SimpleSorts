@@ -9,10 +9,19 @@ namespace SimpleSorts
         private ISortBehaviour<T> _sortExecuter;
         private T[] _array;
 
+        public int Lenght => _array.Length;
+
         public SortableArray(T[] array)
         {
             _array = array;
-            _sortExecuter = new EmptySortBehavior<T>();
+            _sortExecuter = new NoSortBehavior<T>();
+        }
+
+        public T this[int index]
+        {
+            get => _array[index];
+
+            set => _array[index] = value;
         }
 
         public void SetSortBehavior(ISortBehaviour<T> sortBehaviour)
