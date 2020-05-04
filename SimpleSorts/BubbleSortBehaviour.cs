@@ -19,7 +19,6 @@ namespace SimpleSorts
                         T temp = arrayToSort[inside];
                         arrayToSort[inside] = arrayToSort[inside + 1];
                         arrayToSort[inside + 1] = temp;
-                        Show(arrayToSort);
                     }
                 }
             }
