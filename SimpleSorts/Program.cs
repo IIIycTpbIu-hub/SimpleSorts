@@ -10,20 +10,19 @@ namespace SimpleSorts
         static void Main(string[] args)
         {
             Stopwatch stopwatch = new Stopwatch();
-            int[] intArray = new int[10];
+            int[] intArray = new int[10000];
             Random rnd = new Random();
             for (int i = 0; i < intArray.Length; i++)
             {
                 intArray[i] = rnd.Next(0, 100);
             }
             SortableArray<Int32> array = new SortableArray<int>(intArray);
-            array.SetSortBehavior(new SelectionSortBehavior<int>());
+            array.SetSortBehavior(new InsertionSortBehavior<int>());
 
             stopwatch.Start();
-            Show(array);
             array.Sort();
-            Show(array);
             stopwatch.Stop();
+
 
             Console.WriteLine("затраченое время на сортировку {0} элементов: {1}", intArray.Length, stopwatch.Elapsed);
         }
